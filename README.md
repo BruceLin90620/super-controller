@@ -7,7 +7,7 @@ Python 3.8 minimum
  * [pycdr2](https://pypi.org/project/pycdr2/): install it with `pip install pycdr2`.
 
 ### Super Controller
-- A app made by Unity that can choose what robot you want to control.
+- An app made by Unity that can choose what robot you want to control.
 ### Unity Server
 - Receive the unity data and light data. And send the velocity command to the Zenoh Robot Manager.
 ### Zenoh Robot Manager
@@ -23,6 +23,8 @@ python3 UnityServer.py
 Start the zenoh router on PC then run the manager.
 ```
 zenohd
+```
+```
 python3 robot_manager.py
 ```
 ### Multi-Robot
@@ -31,12 +33,19 @@ Run Evpi first. Then start zenoh/DDS bridge
 ```
 zenoh-bridge-dds -s evpi0 -e tcp/$(Robot Manager IP):7447
 ```
-#### Pangolin
+#### Pangolin Robot
+Run pangolin robot first. Then start zenoh/DDS bridge
+```
+ros2 launch pangolin_bringup pangolin_bringup.py
 ```
 ```
-#### turtlebot3
+zenoh-bridge-dds -s pangolin0 -e tcp/$(Robot Manager IP):7447
+```
+#### Turtlebot3
 Run turtlebot3 first. Then start zenoh/DDS bridge
 ```
 ros2 launch turtlebot3_bringup robot.launch.py
+```
+```
 zenoh-bridge-dds -e tcp/$(Robot Manager IP):7447
 ```
