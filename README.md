@@ -23,6 +23,8 @@ python3 UnityServer.py
 Start the zenoh router on PC then run the manager.
 ```
 zenohd
+```
+```
 python3 robot_manager.py
 ```
 ### Multi-Robot
@@ -31,12 +33,19 @@ Run Evpi first. Then start zenoh/DDS bridge
 ```
 zenoh-bridge-dds -s evpi0 -e tcp/$(Robot Manager IP):7447
 ```
-#### Pangolin
+#### Pangolin Robot
+Run pangolin robot first. Then start zenoh/DDS bridge
+```
+ros2 launch pangolin_bringup pangolin_bringup.py
 ```
 ```
-#### turtlebot3
+zenoh-bridge-dds -s pangolin0 -e tcp/$(Robot Manager IP):7447
+```
+#### Turtlebot3
 Run turtlebot3 first. Then start zenoh/DDS bridge
 ```
 ros2 launch turtlebot3_bringup robot.launch.py
+```
+```
 zenoh-bridge-dds -e tcp/$(Robot Manager IP):7447
 ```
