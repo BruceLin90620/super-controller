@@ -7,7 +7,7 @@ Python 3.8 minimum
  * [pycdr2](https://pypi.org/project/pycdr2/): install it with `pip install pycdr2`.
 
 ### Super Controller
-- A app made by Unity that can choose what robot you want to control.
+- An app made by Unity that can choose what robot you want to control.
 ### Unity Server
 - Receive the unity data and light data. And send the velocity command to the Zenoh Robot Manager.
 ### Zenoh Robot Manager
