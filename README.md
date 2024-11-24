@@ -1,4 +1,8 @@
 # super-controller
+Super Controller introduces "What You See is What You Control" for managing multi-robots. Unlike traditional joystick pairing, users scan tags on robots using cameras and select them to control corresponding robots. This approach aims to improve usability for workers managing multi-robots simultaneously.
+
+<img src="./images/portfolio_SuperController.png" width="640px">
+
 ## **Requirements**
 Python 3.8 minimum
  * A [zenoh router](http://zenoh.io/docs/getting-started/quick-test/)
@@ -49,3 +53,6 @@ ros2 launch turtlebot3_bringup robot.launch.py
 ```
 zenoh-bridge-dds -e tcp/$(Robot Manager IP):7447
 ```
+
+## **Demo**
+<a href="https://youtu.be/iEp8NJe1Z8A?si=cfXtF-F2NAqpjik3" title="Link Title"><img src="./images/supercontroll_2.png" alt="Alternate Text" /></a>
